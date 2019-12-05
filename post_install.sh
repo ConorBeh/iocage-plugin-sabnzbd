@@ -17,4 +17,4 @@ sed -i '' 's/127.0.0.1/0.0.0.0/g' /usr/local/sabnzbd/sabnzbd.ini
 #chown -R sab:sab /usr/local/share/sabnzbdplus
 # chmod -R 755 /usr/local/sabnzbd/
 
-service sabnzbd restart
+# service sabnzbd restart
