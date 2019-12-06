@@ -20,4 +20,5 @@ sed -i '' 's/127.0.0.1/0.0.0.0/g' /usr/local/sabnzbd/sabnzbd.ini
 service sabnzbd stop
 sleep 10
 service sabnzbd start
+exit
 # service sabnzbd restart
