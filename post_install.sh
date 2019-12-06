@@ -1,6 +1,6 @@
 #!/bin/sh
 # Enable service
-sysrc -f /etc/rc.conf sabnzbd_enable="YES"
+sysrc sabnzbd_enable="YES"
 
 # Permissions stuffs
 #pw user add sab -c sab -u 8675309 -d /nonexistent -s /usr/bin/nologin
