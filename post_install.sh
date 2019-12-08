@@ -10,11 +10,8 @@ sysrc sabnzbd_enable="YES"
 
 
 
-ln -s /usr/local/bin/python2.7 /usr/bin/python
-ln -s /usr/local/bin/python2.7 /usr/bin/python2
-pw groupadd -n media -g 8675309
-pw user add media -c media -u 8675309 -d /nonexistent -s /usr/bin/nologin
-chown -R media:media /var/run/sabnzbd
+#ln -s /usr/local/bin/python2.7 /usr/bin/python
+#ln -s /usr/local/bin/python2.7 /usr/bin/python2
 
 
 # Start service
@@ -26,7 +23,10 @@ sed -i '' 's/127.0.0.1/0.0.0.0/' /usr/local/sabnzbd/sabnzbd.ini
 # More perms, needs to be done after service start
 #chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd/
 # chmod -R 755 /usr/local/sabnzbd/
-
+pw groupadd -n media -g 8675309
+pw user add media -c media -u 8675309 -d /nonexistent -s /usr/bin/nologin
+chown -R media:media /var/run/sabnzbd
+chown -R media:media /usr/local/sabnzbd
 #sleep 10
 #service sabnzbd start
 
