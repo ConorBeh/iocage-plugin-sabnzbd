@@ -22,5 +22,6 @@ chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd/
 #sleep 10
 #service sabnzbd start
 
-service sabnzbd restart
+service sabnzbd stop
+service sabnzbd start
 
