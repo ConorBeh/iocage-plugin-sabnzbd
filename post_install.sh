@@ -16,11 +16,11 @@ service sabnzbd start
 sed -i '' 's/127.0.0.1/0.0.0.0/' /usr/local/sabnzbd/sabnzbd.ini
 #chmod 777 /usr/local/sabnzbd/sabnzbd.ini
 # More perms, needs to be done after service start
-#chown -R sab:sab /usr/local/share/sabnzbdplus
+chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd/
 # chmod -R 755 /usr/local/sabnzbd/
 
 #sleep 10
 #service sabnzbd start
 
-#service sabnzbd restart
-exit
+service sabnzbd restart
+
