@@ -13,10 +13,10 @@ sysrc sabnzbd_enable="YES"
 
 service sabnzbd start
 
-sed -i '' 's/127.0.0.1/0.0.0.0/' /usr/local/sabnzbd/sabnzbd.ini
+#sed -i '' 's/127.0.0.1/0.0.0.0/' /usr/local/sabnzbd/sabnzbd.ini
 #chmod 777 /usr/local/sabnzbd/sabnzbd.ini
 # More perms, needs to be done after service start
-chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd/
+#chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd/
 # chmod -R 755 /usr/local/sabnzbd/
 
 #sleep 10
