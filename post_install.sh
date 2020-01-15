@@ -1,6 +1,7 @@
 #!/bin/sh
 # Enable service
 sysrc sabnzbd_enable="YES"
+sysrc sabnzbd_user=media
 # echo "sabnzbd_conf_dir=/sabnzbd" >> /etc/rc.conf
 
 # Permissions stuffs
@@ -16,20 +17,22 @@ sysrc sabnzbd_enable="YES"
 
 # Start service
 
-service sabnzbd start
 
-sed -i '' 's/127.0.0.1/0.0.0.0/' /usr/local/sabnzbd/sabnzbd.ini
-#chmod 777 /usr/local/sabnzbd/sabnzbd.ini
+pw user add media -c media -u 8675309 -d /nonexistent -s /usr/bin/nologin
+pw groupadd -n media -g 8675309
+pw groupmod media -m _sabnzbd
+chown -R media:media /usr/local/share/sabnzbdplus
+service sabnzbd start
 # More perms, needs to be done after service start
 #chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd/
-# chmod -R 755 /usr/local/sabnzbd/
+#chmod -R 755 /usr/local/sabnzbd/
 #pw groupadd -n media -g 8675309
 #pw user add media -c media -u 8675309 -d /nonexistent -s /usr/bin/nologin
-chown -R _sabnzbd:_sabnzbd /var/run/sabnzbd
-chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd
+#chown -R _sabnzbd:_sabnzbd /var/run/sabnzbd
+#chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd
 #sleep 10
 #service sabnzbd start
-
+sed -i '' 's/127.0.0.1/0.0.0.0/' /usr/local/sabnzbd/sabnzbd.ini
 service sabnzbd stop
 service sabnzbd start
 
