@@ -33,6 +33,6 @@ service sabnzbd start
 #sleep 10
 #service sabnzbd start
 sed -i '' 's/127.0.0.1/0.0.0.0/' /usr/local/sabnzbd/sabnzbd.ini
-service sabnzbd stop
-service sabnzbd start
+#service sabnzbd stop
+#service sabnzbd start
 
