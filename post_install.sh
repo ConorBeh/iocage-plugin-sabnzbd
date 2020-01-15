@@ -32,7 +32,7 @@ service sabnzbd start
 #chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd
 #sleep 10
 #service sabnzbd start
-sed -i '' 's/127.0.0.1/0.0.0.0/' /usr/local/sabnzbd/sabnzbd.ini
+sed -i '' 's/127.0.0.1/0.0.0.0/g' /usr/local/sabnzbd/sabnzbd.ini
 #service sabnzbd stop
 #service sabnzbd start
 
