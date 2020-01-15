@@ -22,7 +22,7 @@ sysrc sabnzbd_enable="YES"
 #pw groupadd -n sabg -g 8675309
 #pw groupmod sabg -m _sabnzbd
 #chown -R sabg:sabg /usr/local/share/sabnzbdplus
-service sabnzbd start
+#service sabnzbd start
 # More perms, needs to be done after service start
 #chown -R _sabnzbd:_sabnzbd /usr/local/sabnzbd/
 #chmod -R 755 /usr/local/sabnzbd/
