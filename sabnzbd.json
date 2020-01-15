@@ -3,7 +3,7 @@
     "release": "11.3-RELEASE",
     "artifact": "https://github.com/RogerAirgood/iocage-plugin-sabnzbd.git",
     "pkgs": [
-		"sabnzbdplus"
+	"sabnzbdplus"
     ],
     "packagesite": "http://pkg.FreeBSD.org/FreeBSD:11:amd64/latest",
     "fingerprints": {
