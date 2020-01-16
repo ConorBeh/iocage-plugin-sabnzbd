@@ -1,17 +1,13 @@
 #!/bin/sh
-# Enable service
-#sysrc sabnzbd_enable="YES"
-#service sabnzbd start 2>/dev/null
-#service sabnzbd stop 2>/dev/null
+# Start/stop once to generate configs
 service sabnzbd onestart 
-#service sabnzbd stop 2>/dev/null
 sleep 10
 service sabnzbd onestop
+# Edit config to allow outside access
 sed -i '' 's/127.0.0.1/0.0.0.0/g' /usr/local/sabnzbd/sabnzbd.ini
 sleep 10
-#chmod +x /usr/local/sabnzbd/sabnzbd.ini
-#service sabnzbd stop 2>/dev/null
+# Start and enable service
 service sabnzbd onestart
 sysrc sabnzbd_enable="YES"
-#service sabnzbd start 2>/dev/null
+
 
